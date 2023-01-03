@@ -1,0 +1,4 @@
+exclude .*
+prune .*/
+prune *.egg-info/
+prune docs/
