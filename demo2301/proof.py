@@ -4,6 +4,7 @@
 Try out pydata-sphinx-theme and its version switcher dropdown.
 """
 
+
 def main():
     """
     The ``main()`` function in this module.
