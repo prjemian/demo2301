@@ -3,7 +3,9 @@
 # For the full list of built-in configuration values, see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
-import pathlib, sys
+import json
+import pathlib
+import sys
 
 sys.path.append(str(pathlib.Path(__file__).parent.parent.parent))
 import demo2301
@@ -38,5 +40,20 @@ exclude_patterns = []
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = "pydata_sphinx_theme"
+gh_raw_url = "https://raw.githubusercontent.com"
+gh_repo = "prjemian/demo2301"
+gh_path = "main/docs/source"
+switcher_file = "_static/switcher.json"
+v_match = {v["version"] : v for v in json.load(open(switcher_file))}.get(release, "dev")
+# TODO: How can this _ever_ be anything but "dev"?
+#   Just after a tag?  Yes, if switcher file was edited.
+
 html_static_path = ["_static"]
+html_theme = "pydata_sphinx_theme"
+html_theme_options = {
+    "navbar_start": ["navbar-logo", "version-switcher"],
+    "switcher": {
+        "json_url": f"{gh_raw_url}/{gh_repo}/{gh_path}/{switcher_file}",
+        "version_match": v_match,
+    }
+}
