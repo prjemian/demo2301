@@ -1,7 +1,12 @@
 [
     {
-        "name": "(development)",
+        "name": "development (unstable)",
         "version": "dev",
         "url": "https://github.com/prjemian/demo2301/wiki"
+    },
+    {
+        "name": "name (latest)",
+        "version": "0.0.2",
+        "url": "https://github.com/prjemian/demo2301/wiki/0.0.2"
     }
 ]
