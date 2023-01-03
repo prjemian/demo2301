@@ -6,6 +6,9 @@
 Welcome to demo2301's documentation!
 ====================================
 
+Module :func:`demo2301.proof.main()` is the main function for the ``demo2301``
+package, found in module :mod:`demo2301.proof`.
+
 .. toctree::
    :caption: Contents:
    :glob:
