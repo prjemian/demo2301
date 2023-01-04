@@ -45,11 +45,23 @@ jobs:
       run: |
         sphinx-build -M html ./docs/source "${TEMPDIR}/build"
 
+    - name: Re-arrange
+      run: |
+        cd "${TEMPDIR}"
+        mv build/html "${VERSION}"
+        ln -s "./${VERSION}" dev
+        /bin/rm -rf build
+
+    - name: Info
+      run: |
+        echo "pwd=$(pwd)"
+        ls -laFGh
+
     # TODO: deploy on conditions
     - name: Deploy (to gh-pages branch) only on demand
       uses: peaceiris/actions-gh-pages@v3
       with:
         publish_branch: gh-pages
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: "${{ env.TEMPDIR }}/build/html"
+        publish_dir: "${{ env.TEMPDIR }}"
         force_orphan: true
