@@ -10,8 +10,8 @@
         "url": "https://github.com/prjemian/demo2301/wiki/0.0.2"
     },
     {
-        "name": "version switcher dropdown",
-        "version": "switcher",
-        "url": "https://pydata-sphinx-theme.readthedocs.io/en/stable/user_guide/version-dropdown.html"
+        "name": "PyData theme",
+        "version": "pydata-sphinx-theme",
+        "url": "https://pydata-sphinx-theme.readthedocs.io/en/stable/user_guide/"
     }
 ]
