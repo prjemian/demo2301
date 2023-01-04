@@ -5,7 +5,12 @@
         "url": "https://prjemian.github.io/demo2301/dev/"
     },
     {
-        "name": "0.0.3 (latest)",
+        "name": "0.0.4 (latest)",
+        "version": "0.0.4",
+        "url": "https://prjemian.github.io/demo2301/0.0.4/"
+    },
+    {
+        "name": "0.0.3",
         "version": "0.0.3",
         "url": "https://prjemian.github.io/demo2301/0.0.3/"
     },
