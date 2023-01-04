@@ -13,11 +13,22 @@ import demo2301
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
+gh_org = "prjemian"
 project = "demo2301"
 copyright = "2023, Pete Jemian"
 author = "Pete Jemian"
 release = demo2301.__version__
 version = ".".join(release.split(".")[:2])
+
+# fmt: off
+switcher_file = "_static/switcher.json"
+switcher_json_url = (
+    "https://raw.githubusercontent.com/"
+    f"{gh_org}/{project}/"
+    "main/docs/source"
+    f"/{switcher_file}"
+)
+# fmt: on
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -40,20 +51,17 @@ exclude_patterns = []
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-gh_raw_url = "https://raw.githubusercontent.com"
-gh_repo = "prjemian/demo2301"
-gh_path = "main/docs/source"
-switcher_file = "_static/switcher.json"
-v_match = {v["version"] : v for v in json.load(open(switcher_file))}.get(release, "dev")
-# TODO: How can this _ever_ be anything but "dev"?
-#   Just after a tag?  Yes, if switcher file was edited.
-
 html_static_path = ["_static"]
 html_theme = "pydata_sphinx_theme"
+# fmt: off
 html_theme_options = {
     "navbar_start": ["navbar-logo", "version-switcher"],
     "switcher": {
-        "json_url": f"{gh_raw_url}/{gh_repo}/{gh_path}/{switcher_file}",
-        "version_match": v_match,
+        "json_url": switcher_json_url,
+        "version_match": {
+            v["version"] : v
+            for v in json.load(open(switcher_file))
+        }.get(release, "dev"),
     }
 }
+# fmt: on
