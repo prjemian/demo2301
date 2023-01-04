@@ -48,13 +48,23 @@ jobs:
     - name: Re-arrange
       run: |
         cp .github/index.html "${TEMPDIR}"
+
         cd "${TEMPDIR}"
         mv build/html "${VERSION}"
         ln -s "./${VERSION}" dev
+
+        wget https://github.com/prjemian/demo2301/archive/refs/heads/gh-pages.zip
+        unzip gh-pages.zip
+        /bin/rm gh-pages.zip
+        mv demo2301-gh-pages/0.0.3 ./
+        ln -s ./0.0.3 ./latest
+        /bin/rm -rf demo2301-gh-pages
+
         /bin/rm -rf build
 
     - name: Info
       run: |
+        cd "${TEMPDIR}"
         echo "pwd=$(pwd)"
         ls -laFGh
 
