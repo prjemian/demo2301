@@ -59,8 +59,8 @@ jobs:
         unzip -q gh-pages.zip
         /bin/rm gh-pages.zip
 
-        # list of documentation versions to keep
-        # (should include versions in switcher.json)
+        # List of documentation versions to keep.
+        # (should include all versions in switcher.json)
         # Adding future versions will capture that version
         # once it appears in the downloaded gh-pages branch.
         versions=
