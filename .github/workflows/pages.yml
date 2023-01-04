@@ -53,12 +53,14 @@ jobs:
         mv build/html "${VERSION}"
         ln -s "./${VERSION}" dev
 
+        # add previous documentation (built versions)
         wget https://github.com/prjemian/demo2301/archive/refs/heads/gh-pages.zip
         unzip gh-pages.zip
         /bin/rm gh-pages.zip
-        mv demo2301-gh-pages/0.0.3 ./
-        # mv demo2301-gh-pages/0.0.4 ./
-        ln -s ./0.0.3 ./latest
+        # mv demo2301-gh-pages/0.0.3 ./
+        mv demo2301-gh-pages/0.0.4 ./
+        # mv demo2301-gh-pages/0.0.5 ./
+        ln -s ./0.0.4 ./latest
         /bin/rm -rf demo2301-gh-pages
 
         /bin/rm -rf build
