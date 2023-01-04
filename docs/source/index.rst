@@ -21,6 +21,7 @@ package, found in module :mod:`demo2301.proof`.
 - version:	|version|
 - release:	|release|
 - published:	|today|
+- github: https://github.com/prjemian/demo2301/
 
 
 Indices and tables
