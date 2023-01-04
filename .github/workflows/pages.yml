@@ -70,6 +70,8 @@ jobs:
         versions+=" 1.0.0"
         versions+=" 1.0.1"
         versions+=" 1.0.2"
+        versions+=" 1.0.3"
+        versions+=" 1.0.4"
         for v in ${versions}
           do
               if [ -d "demo2301-gh-pages/${v}" ]
