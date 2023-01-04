@@ -8,5 +8,10 @@
         "name": "name (latest)",
         "version": "0.0.2",
         "url": "https://github.com/prjemian/demo2301/wiki/0.0.2"
+    },
+    {
+        "name": "version switcher dropdown",
+        "version": "switcher",
+        "url": "https://pydata-sphinx-theme.readthedocs.io/en/stable/user_guide/version-dropdown.html"
     }
 ]
