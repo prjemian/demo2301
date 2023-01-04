@@ -61,13 +61,15 @@ jobs:
 
         # list of documentation versions to keep
         # (should include versions in switcher.json)
+        # Adding future versions will capture that version
+        # once it appears in the downloaded gh-pages branch.
         versions=
         versions+=" 0.0.4"
         versions+=" 0.0.5"
         versions+=" 0.0.6"
-        versions+=" 0.0.7"
-        versions+=" 0.0.8"
-        versions+=" 0.0.9"
+        versions+=" 1.0.0"
+        versions+=" 1.0.1"
+        versions+=" 1.0.2"
         for v in ${versions}
           do
               if [ -d "demo2301-gh-pages/${v}" ]
