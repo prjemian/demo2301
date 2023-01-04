@@ -57,6 +57,7 @@ jobs:
         unzip gh-pages.zip
         /bin/rm gh-pages.zip
         mv demo2301-gh-pages/0.0.3 ./
+        # mv demo2301-gh-pages/0.0.4 ./
         ln -s ./0.0.3 ./latest
         /bin/rm -rf demo2301-gh-pages
 

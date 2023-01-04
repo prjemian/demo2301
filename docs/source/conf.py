@@ -28,6 +28,10 @@ switcher_json_url = (
     "main/docs/source"
     f"/{switcher_file}"
 )
+switcher_version_list = [
+    v["version"]
+    for v in json.load(open(switcher_file))
+]
 # fmt: on
 
 # -- General configuration ---------------------------------------------------
@@ -58,10 +62,7 @@ html_theme_options = {
     "navbar_start": ["navbar-logo", "version-switcher"],
     "switcher": {
         "json_url": switcher_json_url,
-        "version_match": {
-            v["version"] : v
-            for v in json.load(open(switcher_file))
-        }.get(release, "dev"),
+        "version_match": release if release in switcher_version_list else "dev"
     }
 }
 # fmt: on
