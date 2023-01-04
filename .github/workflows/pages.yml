@@ -59,6 +59,8 @@ jobs:
         unzip -q gh-pages.zip
         /bin/rm gh-pages.zip
 
+        # list of documentation versions to keep
+        # (should include versions in switcher.json)
         versions=
         versions+=" 0.0.4"
         versions+=" 0.0.5"
@@ -67,14 +69,14 @@ jobs:
         versions+=" 0.0.8"
         versions+=" 0.0.9"
         for v in ${versions}
-        do
-            if [ -d "demo2301-gh-pages/${v}" ]
-            then
-                echo "directory 'demo2301-gh-pages/${v}' exists"
-                mv "demo2301-gh-pages/${v}" ./
-                latest="${v}"
-            fi
-        done
+          do
+              if [ -d "demo2301-gh-pages/${v}" ]
+                then
+                    echo "directory 'demo2301-gh-pages/${v}' exists"
+                    mv "demo2301-gh-pages/${v}" ./
+                    latest="${v}"
+                fi
+          done
         echo "latest=${latest}"
         ln -s "./${latest}" ./latest
         /bin/rm -rf demo2301-gh-pages
