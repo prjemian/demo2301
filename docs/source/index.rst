@@ -6,6 +6,8 @@
 Welcome to demo2301's documentation!
 ====================================
 
+Python repository template using pydata-sphinx-theme and its version switcher dropdown.
+
 Module :func:`demo2301.proof.main()` is the main function for the ``demo2301``
 package, found in module :mod:`demo2301.proof`.
 
