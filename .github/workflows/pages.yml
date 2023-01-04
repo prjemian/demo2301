@@ -47,6 +47,7 @@ jobs:
 
     - name: Re-arrange
       run: |
+        cp .github/index.html "${TEMPDIR}"
         cd "${TEMPDIR}"
         mv build/html "${VERSION}"
         ln -s "./${VERSION}" dev
