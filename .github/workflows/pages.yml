@@ -45,7 +45,7 @@ jobs:
       run: |
         sphinx-build -M html ./docs/source "${TEMPDIR}/build"
 
-    - name: Re-arrange
+    - name: Re-build the master directory (contains all documentation versions)
       run: |
         cp .github/index.html "${TEMPDIR}"
 
@@ -54,15 +54,29 @@ jobs:
         ln -s "./${VERSION}" dev
 
         # add previous documentation (built versions)
+        # update the switcher.json file before a new release
         wget https://github.com/prjemian/demo2301/archive/refs/heads/gh-pages.zip
         unzip -q gh-pages.zip
         /bin/rm gh-pages.zip
-        # TODO: do in loop: if version exists, autopick latest
-        # mv demo2301-gh-pages/0.0.3 ./
-        mv demo2301-gh-pages/0.0.4 ./
-        mv demo2301-gh-pages/0.0.5 ./
-        # mv demo2301-gh-pages/0.0.6 ./
-        ln -s ./0.0.5 ./latest
+
+        versions=
+        versions+=" 0.0.4"
+        versions+=" 0.0.5"
+        versions+=" 0.0.6"
+        versions+=" 0.0.7"
+        versions+=" 0.0.8"
+        versions+=" 0.0.9"
+        for v in ${versions}
+        do
+            if [ -d "demo2301-gh-pages/${v}" ]
+            then
+                echo "directory 'demo2301-gh-pages/${v}' exists"
+                mv "demo2301-gh-pages/${v}" ./
+                latest="${v}"
+            fi
+        done
+        echo "latest=${latest}"
+        ln -s "./${latest}" ./latest
         /bin/rm -rf demo2301-gh-pages
 
         /bin/rm -rf build

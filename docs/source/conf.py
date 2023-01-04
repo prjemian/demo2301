@@ -29,7 +29,7 @@ switcher_json_url = (
     f"/{switcher_file}"
 )
 switcher_version_list = [
-    v["version"]
+    v["version"]  # to match with ``release`` (above)
     for v in json.load(open(switcher_file))
 ]
 # fmt: on
