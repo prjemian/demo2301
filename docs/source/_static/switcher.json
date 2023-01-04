@@ -2,12 +2,12 @@
     {
         "name": "development (unstable)",
         "version": "dev",
-        "url": "https://github.com/prjemian/demo2301/wiki/"
+        "url": "https://prjemian.github.io/demo2301/dev/"
     },
     {
         "name": "name (latest)",
         "version": "0.0.2",
-        "url": "https://github.com/prjemian/demo2301/wiki/0.0.2"
+        "url": "https://prjemian.github.io/demo2301/0.0.2/"
     },
     {
         "name": "PyData theme",
