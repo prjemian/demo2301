@@ -1,7 +1,7 @@
 name: Publish Sphinx Docs to GitHub Pages
 
 on: push
-# TODO: build on conditions
+# could build on conditions
 
 defaults:
   run:
@@ -91,7 +91,7 @@ jobs:
         echo "pwd=$(pwd)"
         ls -laFGh
 
-    # TODO: deploy on conditions
+    # could deploy on conditions
     - name: Deploy (to gh-pages branch) only on demand
       uses: peaceiris/actions-gh-pages@v3
       with:
