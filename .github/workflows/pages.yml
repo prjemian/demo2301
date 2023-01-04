@@ -51,6 +51,7 @@ jobs:
 
         cd "${TEMPDIR}"
         mv build/html "${VERSION}"
+        /bin/rm -rf build
         ln -s "./${VERSION}" dev
 
         # add previous documentation (built versions)
@@ -85,8 +86,6 @@ jobs:
         ln -s "./${latest}" ./latest
         /bin/rm -rf demo2301-gh-pages
 
-        /bin/rm -rf build
-
     - name: Info
       run: |
         cd "${TEMPDIR}"
@@ -94,7 +93,7 @@ jobs:
         ls -laFGh
 
     # could deploy on conditions
-    - name: Deploy (to gh-pages branch) only on demand
+    - name: Deploy (to gh-pages branch)
       uses: peaceiris/actions-gh-pages@v3
       with:
         publish_branch: gh-pages
