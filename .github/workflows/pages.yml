@@ -1,0 +1,55 @@
+name: Publish Sphinx Docs to GitHub Pages
+
+on: push
+# TODO: build on conditions
+
+defaults:
+  run:
+    shell: bash -l {0}
+
+jobs:
+
+  docs:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/setup-python@v4
+      with:
+        python-version: "3.11"
+
+    - name: Checkout
+      uses: actions/checkout@master
+      with:
+        fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
+
+    - name: Install Sphinx build requirements
+      run: |
+        pip install pydata-sphinx-theme "sphinx<6" setuptools-scm
+
+    - name: Install our package
+      run: |
+        pip install --no-deps -e . -vv
+
+    - name: Make Temporary Directory for Sphinx content
+      run: |
+        echo "TEMPDIR=$(mktemp -d)" >> ${GITHUB_ENV}
+        # next step also creates _version.py file
+        echo "VERSION=$(./setup.py --version)" >> ${GITHUB_ENV}
+
+    - name: Show Environment variables
+      run: |
+        echo "TEMPDIR=${TEMPDIR}"
+        echo "VERSION=${VERSION}"
+
+    - name: Sphinx
+      run: |
+        sphinx-build -M html ./docs/source "${TEMPDIR}/build"
+
+    # TODO: deploy on conditions
+    - name: Deploy (to gh-pages branch) only on demand
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        publish_branch: gh-pages
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: "${{ env.TEMPDIR }}"
+        force_orphan: true
