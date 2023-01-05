@@ -12,4 +12,4 @@ def talkative():
     """
     Print something.
     """
-    print(f"Here we are in '{__file__}:talkative()'")
+    print(f"{__file__=} talkative()")

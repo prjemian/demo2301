@@ -16,7 +16,7 @@ def about():
     """
     from .another import talkative
 
-    print(f"Here we are in '{__file__}:about()', calling talkative()")
+    print(f"{__file__=} about(), calling talkative()")
     talkative()
 
 
@@ -39,8 +39,8 @@ def main():
     Calls ``about()``.
     """
     print(f"{__package__=}")
-    # print(f"{demo2301.__package__=}  {demo2301.__version__=}")
-    print(f"Here we are in '{__file__}:main()', calling about()")
+    print(f"{get_version()=}")
+    print(f"{__file__=} main(), calling about()")
     about()
 
 
