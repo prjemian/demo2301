@@ -17,6 +17,8 @@ package, found in module :mod:`demo2301.proof`.
    :maxdepth: 2
 
    api/*
+   changes
+   license
 
 ----
 
