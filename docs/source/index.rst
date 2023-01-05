@@ -6,10 +6,14 @@
 Welcome to demo2301's documentation!
 ====================================
 
-Python repository template using pydata-sphinx-theme and its version switcher dropdown.
+Python repository template using pydata-sphinx-theme [#]_
+and its version switcher dropdown. [#]_
 
 Module :func:`demo2301.proof.main()` is the main function for the ``demo2301``
 package, found in module :mod:`demo2301.proof`.
+
+.. [#] ``pydata-sphinx-theme``: https://github.com/pydata/pydata-sphinx-theme
+.. [#] version switcher dropdown: https://pydata-sphinx-theme.readthedocs.io/en/latest/user_guide/version-dropdown.html
 
 .. toctree::
    :caption: Contents:
