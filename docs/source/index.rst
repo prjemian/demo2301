@@ -22,7 +22,7 @@ package, found in module :mod:`demo2301.proof`.
    :glob:
    :maxdepth: 2
 
-   api/*
+   api
    changes
    license
 
