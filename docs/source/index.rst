@@ -12,8 +12,10 @@ and its version switcher dropdown. [#]_
 Module :func:`demo2301.proof.main()` is the main function for the ``demo2301``
 package, found in module :mod:`demo2301.proof`.
 
-.. [#] ``pydata-sphinx-theme``: https://github.com/pydata/pydata-sphinx-theme
-.. [#] version switcher dropdown: https://pydata-sphinx-theme.readthedocs.io/en/latest/user_guide/version-dropdown.html
+.. [#] ``pydata-sphinx-theme``:
+   https://github.com/pydata/pydata-sphinx-theme
+.. [#] version switcher dropdown:
+   https://pydata-sphinx-theme.readthedocs.io/en/latest/user_guide/version-dropdown.html
 
 .. toctree::
    :caption: Contents:
