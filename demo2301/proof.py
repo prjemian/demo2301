@@ -15,6 +15,7 @@ def about():
     Print something.
     """
     from .another import talkative
+
     print(f"Here we are in '{__file__}:about()', calling talkative()")
     talkative()
 
@@ -25,9 +26,11 @@ def get_version():
     """
     try:
         from ._version import __version__
+
         return __version__
     except ImportError:
         return "undefined"
+
 
 def main():
     """
