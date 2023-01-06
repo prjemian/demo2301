@@ -1,0 +1,32 @@
+/* Style the link marked: latest */
+.version-switcher__container a[data-version-name*="(latest)"] {
+   background-color: lightgreen;
+}
+
+/* Style the link marked: dev */
+.version-switcher__container a[data-version="dev"] {
+   background-color: var(--pst-color-secondary);
+}
+
+/* If dev is the active version, style it per theme */
+.version-switcher__button[data-active-version*="dev"] {
+   background-color: var(--pst-color-secondary);
+}
+/* If the active version has the name "dev", style it per theme */
+.version-switcher__button[data-active-version-name*="dev"] {
+   background-color: var(--pst-color-secondary);
+}
+
+
+/* Style the link marked: redirect */
+.version-switcher__container a[data-version="redirect"] {
+   background-color: bisque;
+}
+
+/* Style all links with a specific subset of versions */
+/*
+.version-switcher__container a[data-version="0.0.4"],
+.version-switcher__container a[data-version="0.0.6"] {
+   background-color: red;
+}
+*/

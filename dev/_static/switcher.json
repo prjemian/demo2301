@@ -1,0 +1,36 @@
+[
+    {
+        "name": "development (main branch)",
+        "version": "dev",
+        "url": "https://prjemian.github.io/demo2301/dev/"
+    },
+    {
+        "name": "1.0.3 (latest)",
+        "version": "1.0.3",
+        "url": "https://prjemian.github.io/demo2301/1.0.3/"
+    },
+    {
+        "version": "1.0.2",
+        "url": "https://prjemian.github.io/demo2301/1.0.2/"
+    },
+    {
+        "version": "1.0.0",
+        "url": "https://prjemian.github.io/demo2301/1.0.0/"
+    },
+    {
+        "version": "0.0.6",
+        "url": "https://prjemian.github.io/demo2301/0.0.6/"
+    },
+    {
+        "version": "0.0.5",
+        "url": "https://prjemian.github.io/demo2301/0.0.5/"
+    },
+    {
+        "version": "0.0.4",
+        "url": "https://prjemian.github.io/demo2301/0.0.4/"
+    },
+    {
+        "version": "redirect",
+        "url": "https://prjemian.github.io/demo2301/"
+    }
+]

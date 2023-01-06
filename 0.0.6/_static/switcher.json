@@ -1,0 +1,27 @@
+[
+    {
+        "name": "development (main branch)",
+        "version": "dev",
+        "url": "https://prjemian.github.io/demo2301/dev/"
+    },
+    {
+        "name": "0.0.6 (latest)",
+        "version": "0.0.6",
+        "url": "https://prjemian.github.io/demo2301/0.0.6/"
+    },
+    {
+        "name": "0.0.5",
+        "version": "0.0.5",
+        "url": "https://prjemian.github.io/demo2301/0.0.5/"
+    },
+    {
+        "name": "0.0.4",
+        "version": "0.0.4",
+        "url": "https://prjemian.github.io/demo2301/0.0.4/"
+    },
+    {
+        "name": "PyData theme",
+        "version": "pydata-sphinx-theme",
+        "url": "https://pydata-sphinx-theme.readthedocs.io/en/stable/user_guide/"
+    }
+]

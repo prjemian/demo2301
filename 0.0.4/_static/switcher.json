@@ -1,0 +1,22 @@
+[
+    {
+        "name": "development (unstable)",
+        "version": "dev",
+        "url": "https://prjemian.github.io/demo2301/dev/"
+    },
+    {
+        "name": "0.0.4 (latest)",
+        "version": "0.0.4",
+        "url": "https://prjemian.github.io/demo2301/0.0.4/"
+    },
+    {
+        "name": "0.0.3",
+        "version": "0.0.3",
+        "url": "https://prjemian.github.io/demo2301/0.0.3/"
+    },
+    {
+        "name": "PyData theme",
+        "version": "pydata-sphinx-theme",
+        "url": "https://pydata-sphinx-theme.readthedocs.io/en/stable/user_guide/"
+    }
+]
