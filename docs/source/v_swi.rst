@@ -1,5 +1,5 @@
 ============================================
-Versioning
+Version switcher
 ============================================
 
 In many software packages used as libraries, it is useful to provide
