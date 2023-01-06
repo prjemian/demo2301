@@ -25,7 +25,7 @@ Complete release history on GitHub: https://github.com/prjemian/demo2301/release
 1.0.3
 ******
 
-release expected by 2023-02-01
+released 2023-01-06
 
 Enhancements
 ------------
