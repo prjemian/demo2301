@@ -32,24 +32,26 @@ jobs:
 
     - name: Make Temporary Directory for Sphinx content
       run: |
-        echo "TEMPDIR=$(mktemp -d)" >> ${GITHUB_ENV}
+        echo "SRC_DIR=$(pwd)" >> ${GITHUB_ENV}
+        echo "TMP_DIR=$(mktemp -d)" >> ${GITHUB_ENV}
         # next step also creates _version.py file
         echo "VERSION=$(./setup.py --version)" >> ${GITHUB_ENV}
 
     - name: Show Environment variables
       run: |
-        echo "TEMPDIR=${TEMPDIR}"
+        echo "SRC_DIR=${SRC_DIR}"
+        echo "TMP_DIR=${TMP_DIR}"
         echo "VERSION=${VERSION}"
 
     - name: Sphinx
       run: |
-        sphinx-build -M html ./docs/source "${TEMPDIR}/build"
+        sphinx-build -M html ./docs/source "${TMP_DIR}/build"
 
     - name: Re-build the master directory (contains all documentation versions)
       run: |
-        cp .github/index.html "${TEMPDIR}"
+        cp .github/index.html "${TMP_DIR}"
 
-        cd "${TEMPDIR}"
+        cd "${TMP_DIR}"
         mv build/html "${VERSION}"
         /bin/rm -rf build
         ln -s "./${VERSION}" dev
@@ -60,19 +62,7 @@ jobs:
         unzip -q gh-pages.zip
         /bin/rm gh-pages.zip
 
-        # List of documentation versions to keep.
-        # (should include all versions in switcher.json)
-        # Adding future versions will capture that version
-        # once it appears in the downloaded gh-pages branch.
-        versions=
-        versions+=" 0.0.4"
-        versions+=" 0.0.5"
-        versions+=" 0.0.6"
-        versions+=" 1.0.0"
-        versions+=" 1.0.2"
-        versions+=" 1.0.3"
-        versions+=" 1.0.4"
-        versions+=" 1.0.5"
+        source "${SRC_DIR}/.github/define_versions.sh"
         for v in ${versions}
           do
               if [ -d "demo2301-gh-pages/${v}" ]
@@ -84,13 +74,15 @@ jobs:
           done
         echo "latest=${latest}"
         ln -s "./${latest}" ./latest
+
         /bin/rm -rf demo2301-gh-pages
 
     - name: Info
       run: |
-        cd "${TEMPDIR}"
+        cd "${TMP_DIR}"
         echo "pwd=$(pwd)"
         ls -laFGh
+        du -shc *
 
     # could deploy on conditions
     - name: Deploy (to gh-pages branch)
@@ -98,5 +90,5 @@ jobs:
       with:
         publish_branch: gh-pages
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: "${{ env.TEMPDIR }}"
+        publish_dir: "${{ env.TMP_DIR }}"
         force_orphan: true
