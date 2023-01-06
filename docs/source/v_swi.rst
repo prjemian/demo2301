@@ -1,5 +1,5 @@
 ============================================
-Providing tag-based documentation
+Versioning
 ============================================
 
 In many software packages used as libraries, it is useful to provide
