@@ -37,6 +37,8 @@ Add history of changes between versions.
 
 Add ``LICENSE`` file to documentation.
 
+Describe the tag-based documentation scheme.
+
 1.0.2
 ******
 
