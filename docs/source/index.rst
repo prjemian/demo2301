@@ -25,6 +25,7 @@ package, found in module :mod:`demo2301.proof`.
    api
    changes
    license
+   v_swi
 
 ----
 
